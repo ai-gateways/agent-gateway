@@ -45,7 +45,7 @@ With one agent and one caller, the agent's own authentication and logs are usual
 
 ## How the A2A protocol works
 
-The Agent2Agent (A2A) protocol is an open standard for one agent to discover another and send it work. Google introduced A2A in April 2025, and the [Linux Foundation launched the Agent2Agent project](https://www.linuxfoundation.org/press/linux-foundation-launches-the-agent2agent-protocol-project-to-enable-secure-intelligent-communication-between-ai-agents) in June 2025 with AWS, Cisco, Google, Microsoft, Salesforce, SAP, and ServiceNow. Version 1.0.0 is the [latest released specification](https://a2a-protocol.org/latest/specification/#agent2agent-a2a-protocol-specification).
+The Agent2Agent (A2A) protocol is an open standard for one agent to discover another and send it work. Google introduced A2A in April 2025, and the [Linux Foundation launched the Agent2Agent project](https://www.linuxfoundation.org/press/linux-foundation-launches-the-agent2agent-protocol-project-to-enable-secure-intelligent-communication-between-ai-agents#:~:text=today%20announced%20the%20launch%20of%20the%20Agent2Agent) in June 2025 with AWS, Cisco, Google, Microsoft, Salesforce, SAP, and ServiceNow. Version 1.0.0 is the [latest released specification](https://a2a-protocol.org/latest/specification/#agent2agent-a2a-protocol-specification).
 
 An agent gateway works with five A2A concepts:
 
@@ -148,8 +148,8 @@ Open-source projects with documented A2A support are still few, since the protoc
 
 | Project | Language | License | A2A support | Other traffic in the same gateway | Deployment |
 |---|---|---|---|---|---|
-| [Bifrost](https://github.com/maximhq/bifrost) | Go | Apache 2.0 | Registers agents from Agent Cards; JSON-RPC, REST, and gRPC transports; per-key agent grants; push notifications; agent logs linked to model and tool calls | LLM requests and MCP tool calls | Single binary via npx, Docker, Kubernetes, or Go SDK; self-hosted, including air-gapped |
-| [ContextForge](https://github.com/IBM/mcp-context-forge) | Python | Apache 2.0 | Registers A2A agents by endpoint URL and exposes each one as an MCP tool | MCP servers and REST or gRPC APIs | PyPI, Docker, or Kubernetes |
+| [Bifrost](https://github.com/maximhq/bifrost/blob/dev/docs/features/agent-gateway/overview.mdx) | Go | Apache 2.0 | Registers agents from Agent Cards; JSON-RPC, REST, and gRPC transports; per-key agent grants; push notifications; agent logs linked to model and tool calls | LLM requests and MCP tool calls | Single binary via npx, Docker, Kubernetes, or Go SDK; self-hosted, including air-gapped |
+| [ContextForge](https://github.com/IBM/mcp-context-forge#overview--goals) | Python | Apache 2.0 | Registers A2A agents by endpoint URL and exposes each one as an MCP tool | MCP servers and REST or gRPC APIs | PyPI, Docker, or Kubernetes |
 
 Bifrost proxies A2A traffic as A2A, while ContextForge presents A2A agents as MCP tools; the fit depends on whether callers speak A2A directly or through an MCP client.
 
@@ -157,4 +157,7 @@ Bifrost proxies A2A traffic as A2A, while ContextForge presents A2A agents as MC
 
 - [How an LLM gateway works](https://github.com/ai-gateways/llm-gateway#how-an-llm-gateway-works): routing, budgets, and failover for the model calls agents make
 - [MCP gateway security](https://github.com/ai-gateways/mcp-gateway#mcp-gateway-security): token handling and tool poisoning on the agent-to-tool hop
+- [The three kinds of AI traffic](https://github.com/ai-gateways/ai-gateway#the-three-kinds-of-ai-traffic): how LLM, MCP, and agent gateways fit under one AI gateway
+- [Identity and access](https://github.com/ai-gateways/ai-governance#identity-and-access): keeping agent, model, and tool permissions separate
+- [Traces, metrics, and logs](https://github.com/ai-gateways/llm-observability#traces-metrics-and-logs): following one agent task across model and tool calls
 - [AI Gateways](https://github.com/ai-gateways): all guides in this organization
