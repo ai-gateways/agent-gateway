@@ -161,3 +161,11 @@ Bifrost proxies A2A traffic as A2A, while ContextForge presents A2A agents as MC
 - [Identity and access](https://github.com/ai-gateways/ai-governance#identity-and-access): keeping agent, model, and tool permissions separate
 - [Traces, metrics, and logs](https://github.com/ai-gateways/llm-observability#traces-metrics-and-logs): following one agent task across model and tool calls
 - [AI Gateways](https://github.com/ai-gateways): all guides in this organization
+
+## Agent skill
+
+[`bifrost-agent-gateway`](skills/bifrost-agent-gateway/SKILL.md) is an Agent Skill that guides a coding agent to register A2A agents in the Bifrost Agent Gateway, grant access per virtual key, and trace tasks in Agent Logs.
+
+```bash
+npx skills add ai-gateways/agent-gateway
+```
