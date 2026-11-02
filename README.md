@@ -161,6 +161,7 @@ Bifrost routes A2A traffic as A2A, while ContextForge presents A2A agents as MCP
 - [The three kinds of AI traffic](https://github.com/ai-gateways/ai-gateway#the-three-kinds-of-ai-traffic): how LLM, MCP, and agent gateways fit under one AI gateway
 - [Identity and access](https://github.com/ai-gateways/ai-governance#identity-and-access): keeping agent, model, and tool permissions separate
 - [Traces, metrics, and logs](https://github.com/ai-gateways/llm-observability#traces-metrics-and-logs): following one agent task across model and tool calls
+- [Awesome AI Gateways](https://github.com/ai-gateways/awesome-ai-gateways#agent-gateways): a curated list of open-source and commercial agent gateways for A2A traffic
 - [AI Gateways](https://github.com/ai-gateways): all guides in this organization
 
 ## Agent skill
