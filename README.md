@@ -16,6 +16,7 @@ This guide explains what an agent gateway does, how it handles the A2A protocol,
 - [How to evaluate an agent gateway](#how-to-evaluate-an-agent-gateway)
 - [Open-source agent gateway projects](#open-source-agent-gateway-projects)
 - [Related guides](#related-guides)
+- [Agent skill](#agent-skill)
 
 ## What is an agent gateway?
 
@@ -151,7 +152,7 @@ Open-source projects with documented A2A support are still few, since the protoc
 | [Bifrost](https://github.com/maximhq/bifrost/blob/dev/docs/features/agent-gateway/overview.mdx) | Go | Apache 2.0 | Registers agents from Agent Cards; JSON-RPC, REST, and gRPC transports; per-key agent grants; push notifications; agent logs linked to model and tool calls | LLM requests and MCP tool calls | Single binary via npx, Docker, Kubernetes, or Go SDK; self-hosted, including air-gapped |
 | [ContextForge](https://github.com/IBM/mcp-context-forge#overview--goals) | Python | Apache 2.0 | Registers A2A agents by endpoint URL and exposes each one as an MCP tool | MCP servers and REST or gRPC APIs | PyPI, Docker, or Kubernetes |
 
-Bifrost proxies A2A traffic as A2A, while ContextForge presents A2A agents as MCP tools; the fit depends on whether callers speak A2A directly or through an MCP client.
+Bifrost routes A2A traffic as A2A, while ContextForge presents A2A agents as MCP tools; the fit depends on whether callers speak A2A directly or through an MCP client.
 
 ## Related guides
 
@@ -164,7 +165,7 @@ Bifrost proxies A2A traffic as A2A, while ContextForge presents A2A agents as MC
 
 ## Agent skill
 
-[`bifrost-agent-gateway`](skills/bifrost-agent-gateway/SKILL.md) is an Agent Skill that guides a coding agent to register A2A agents in the Bifrost Agent Gateway, grant access per virtual key, and trace tasks in Agent Logs.
+[`agent-gateway`](skills/agent-gateway/SKILL.md) is an Agent Skill that guides a coding agent to register A2A agents in the Bifrost Agent Gateway, grant access per virtual key, and trace tasks in Agent Logs.
 
 ```bash
 npx skills add ai-gateways/agent-gateway
